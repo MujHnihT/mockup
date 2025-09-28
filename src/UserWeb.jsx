@@ -16,20 +16,22 @@ const Chip = ({ children }) => (
 );
 
 // === Mock data ===
+
 const PRODUCTS = [
-  { id: "p1", name: "Enzymax Kids", price: 189000, rating: 4.6, tag: "Dinh dưỡng", img: "https://placehold.co/240x240", nearest: { name: "Nhà thuốc Minh An", distance: 1.2, address: "12 P. Xã Đàn, Hà Nội" } },
-  { id: "p2", name: "PregnaVie", price: 259000, rating: 4.7, tag: "Sức khỏe Phụ nữ", img: "https://placehold.co/240x240", nearest: { name: "Nhà thuốc Sài Gòn", distance: 2.5, address: "45 Nguyễn Trãi, TP.HCM" } },
-  { id: "p3", name: "UTImax", price: 299000, rating: 4.8, tag: "Sức khỏe Phụ nữ", img: "https://placehold.co/240x240", nearest: { name: "Nhà thuốc Hoà Bình", distance: 3.1, address: "89 Lê Lợi, Đà Nẵng" } },
-  { id: "p4", name: "Enzymax Duo Biotics", price: 239000, rating: 4.5, tag: "Tiêu hóa", img: "https://placehold.co/240x240", nearest: { name: "Nhà thuốc Thành Công", distance: 1.9, address: "22 Kim Mã, Hà Nội" } },
-  { id: "p5", name: "Enzymax Forte", price: 199000, rating: 4.4, tag: "Dinh dưỡng", img: "https://placehold.co/240x240", nearest: { name: "Nhà thuốc Gia An", distance: 2.4, address: "5 Cầu Giấy, Hà Nội" } },
-  { id: "p6", name: "Enzymax 1st Strike", price: 199000, rating: 4.4, tag: "Tiêu hóa", img: "https://placehold.co/240x240", nearest: { name: "Nhà thuốc Gia An", distance: 2.4, address: "5 Cầu Giấy, Hà Nội" } },
+  { id: "p1", name: "Enzymax Kids", price: 360000, rating: 4.6, tag: "Dinh dưỡng", img: "https://placehold.co/240x240", nearest: { name: "Nhà thuốc Minh Thủy 1", distance: 1.2, address: "12 P. Xã Đàn, Hà Nội" } },
+  { id: "p2", name: "PregnaVie", price: 600000, rating: 4.7, tag: "Sức khỏe Phụ nữ", img: "https://placehold.co/240x240", nearest: { name: "Nhà thuốc Nhị Trưng 1", distance: 2.5, address: "45 Nguyễn Trãi, TP.HCM" } },
+  { id: "p3", name: "UTImax", price: 500000, rating: 4.8, tag: "Sức khỏe Phụ nữ", img: "https://placehold.co/240x240", nearest: { name: "Nhà thuốc Phước Thiện 1", distance: 3.1, address: "89 Lê Lợi, Đà Nẵng" } },
+  { id: "p4", name: "Enzymax Duo Biotics", price: 500000, rating: 4.5, tag: "Tiêu hóa", img: "https://placehold.co/240x240", nearest: { name: "Nhà thuốc Nhân Hòa 1", distance: 1.9, address: "22 Kim Mã, Đà Lạt" } },
+  { id: "p5", name: "Enzymax Forte", price: 600000, rating: 4.4, tag: "Dinh dưỡng", img: "https://placehold.co/240x240", nearest: { name: "Nhà thuốc Nhân Hòa 1", distance: 2.4, address: "5 Cầu Giấy, Đà Lạt" } },
+  { id: "p6", name: "Enzymax 1st Strike", price: 300000, rating: 4.4, tag: "Tiêu hóa", img: "https://placehold.co/240x240", nearest: { name: "Nhà thuốc Nhân Hòa 1", distance: 2.4, address: "5 Cầu Giấy, Đà Lạt" } },
 ];
 
+
 const NEARBY = [
-  { id: "nt1", name: "Nhà thuốc Minh An", distance: 1.2, address: "12 P. Xã Đàn, Hà Nội" },
-  { id: "nt2", name: "Nhà thuốc Thành Công", distance: 1.9, address: "22 Kim Mã, Hà Nội" },
-  { id: "nt3", name: "Nhà thuốc Gia An", distance: 2.4, address: "5 Cầu Giấy, Hà Nội" },
-  { id: "nt4", name: "Nhà thuốc Hòa Bình", distance: 3.1, address: "89 Lê Lợi, Đà Nẵng" },
+  { id: "nt1", name: "Nhà thuốc Minh Thủy 1", distance: 1.2, address: "12 P. Xã Đàn, Hà Nội"  },
+  { id: "nt2",name: "Nhà thuốc Nhị Trưng 1", distance: 2.5, address: "45 Nguyễn Trãi, TP.HCM"  },
+  { id: "nt3",  name: "Nhà thuốc Phước Thiện 1", distance: 3.1, address: "89 Lê Lợi, Đà Nẵng"  },
+  { id: "nt4", name: "Nhà thuốc Nhân Hòa 1", distance: 2.4, address: "5 Cầu Giấy, Đà Lạt" },
 ];
 
 // === Layout Shell ===
@@ -138,7 +140,7 @@ const ProductDrawer = ({ product, onClose, openNearby }) => {
 const RemindersPanel = () => (
   <Card className="p-4">
     <div className="font-semibold mb-2">Nhắc lịch hôm nay</div>
-    {["08:00 - Enzymax Kids", "12:00 - Omega", "20:30 - Dinh dưỡng+"].map((t,i)=>(
+    {["08:00 - Enzymax Kids", "12:00 - Enzymax Duo Biotics", "20:30 - Enzymax Forte"].map((t,i)=>(
       <div key={i} className="flex items-center gap-3 py-2 border-b last:border-b-0">
         <Clock size={18} />
         <div className="flex-1 text-sm">{t}</div>
