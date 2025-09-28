@@ -187,8 +187,8 @@ const Products = () => {
 
       <Card className="p-0">
         <Table
-          cols={["ID","Name","Price","Stock","Status","Category"]}
-          rows={filtered.map(p=> ({ ID:p.id, Name:p.name, Price:`₫ ${p.price.toLocaleString()}`, Stock:p.stock, Status: <Badge className={`${p.status==='Active'?'bg-emerald-50 text-emerald-700':'bg-gray-100'}`}>{p.status}</Badge>, Category:p.category }))}
+          cols={["ID","Name","Price","Category"]}
+          rows={filtered.map(p=> ({ ID:p.id, Name:p.name, Price:`₫ ${p.price.toLocaleString()}`, Category: p.tag }))}
           rowKey="ID"
           renderActions={(r)=> (
             <div className="flex gap-2">
