@@ -18,12 +18,27 @@ const Badge = ({ children, className = "" }) => (
   <span className={`text-xs px-2 py-1 rounded-full ${className}`}>{children}</span>
 );
 
-// Fake data
+
 const productsSeed = [
-  { id: "P001", name: "Probiotic Digest+", price: 189000, stock: 120, status: "Active", category: "Tiêu hóa" },
-  { id: "P002", name: "Omega Balance", price: 259000, stock: 54, status: "Active", category: "Dinh dưỡng" },
-  { id: "P003", name: "Women Vital+", price: 299000, stock: 0, status: "Draft", category: "Sức khỏe Phụ nữ" },
+  { id: "p1", name: "Enzymax Kids", price: 189000, rating: 4.6, tag: "Dinh dưỡng", img: "https://placehold.co/240x240", nearest: { name: "Nhà thuốc Minh An", distance: 1.2, address: "12 P. Xã Đàn, Hà Nội" } },
+  { id: "p2", name: "PregnaVie", price: 259000, rating: 4.7, tag: "Sức khỏe Phụ nữ", img: "https://placehold.co/240x240", nearest: { name: "Nhà thuốc Sài Gòn", distance: 2.5, address: "45 Nguyễn Trãi, TP.HCM" } },
+  { id: "p3", name: "UTImax", price: 299000, rating: 4.8, tag: "Sức khỏe Phụ nữ", img: "https://placehold.co/240x240", nearest: { name: "Nhà thuốc Hoà Bình", distance: 3.1, address: "89 Lê Lợi, Đà Nẵng" } },
+  { id: "p4", name: "Enzymax Duo Biotics", price: 239000, rating: 4.5, tag: "Tiêu hóa", img: "https://placehold.co/240x240", nearest: { name: "Nhà thuốc Thành Công", distance: 1.9, address: "22 Kim Mã, Hà Nội" } },
+  { id: "p5", name: "Enzymax Forte", price: 199000, rating: 4.4, tag: "Dinh dưỡng", img: "https://placehold.co/240x240", nearest: { name: "Nhà thuốc Gia An", distance: 2.4, address: "5 Cầu Giấy, Hà Nội" } },
+  { id: "p6", name: "Enzymax 1st Strike", price: 199000, rating: 4.4, tag: "Tiêu hóa", img: "https://placehold.co/240x240", nearest: { name: "Nhà thuốc Gia An", distance: 2.4, address: "5 Cầu Giấy, Hà Nội" } },
 ];
+
+
+
+// // Fake data
+// const productsSeed = [
+//   { id: "P001", name: "Enzymax", price: 189000, stock: 120, status: "Active", category: "Tiêu hóa" },
+//   { id: "P002", name: "PregnaVie", price: 259000, stock: 54, status: "Active", category: "Dinh dưỡng" },
+//   { id: "P003", name: "UTImax", price: 299000, stock: 0, status: "Draft", category: "Sức khỏe Phụ nữ" },
+//   { id: "P001", name: "Enzymax", price: 189000, stock: 120, status: "Active", category: "Tiêu hóa" },
+//   { id: "P002", name: "PregnaVie", price: 259000, stock: 54, status: "Active", category: "Dinh dưỡng" },
+//   { id: "P003", name: "UTImax", price: 299000, stock: 0, status: "Draft", category: "Sức khỏe Phụ nữ" },
+// ];
 
 // Interest metrics per product (mock last 7 days)
 const interestSeed = [
@@ -33,8 +48,8 @@ const interestSeed = [
 ];
 
 const feedbackSeed = [
-  { id: "F001", type: "Góp ý", product: "Probiotic Digest+", user: "Phạm D", createdAt: "2025-09-17 08:11", status: "Open" },
-  { id: "F002", type: "Khiếu nại", product: "Omega Balance", user: "Đỗ E", createdAt: "2025-09-18 12:45", status: "In Progress" },
+  { id: "F001", type: "Góp ý", product: "Enzymax", user: "Phạm D", createdAt: "2025-09-17 08:11", status: "Open" },
+  { id: "F002", type: "Khiếu nại", product: "PregnaVie", user: "Đỗ E", createdAt: "2025-09-18 12:45", status: "In Progress" },
 ];
 
 const pharmaciesSeed = [

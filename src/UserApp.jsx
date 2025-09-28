@@ -59,9 +59,9 @@ const BottomNav = ({ tab, setTab }) => (
 
 // Data mocks
 const PRODUCTS = [
-  { id: "p1", name: "Probiotic Digest+", price: 189000, rating: 4.6, tag: "Tiêu hóa", img: "https://placehold.co/120x120" },
-  { id: "p2", name: "Omega Balance", price: 259000, rating: 4.7, tag: "Dinh dưỡng", img: "https://placehold.co/120x120" },
-  { id: "p3", name: "Women Vital+", price: 299000, rating: 4.8, tag: "Sức khỏe Phụ nữ", img: "https://placehold.co/120x120" },
+  { id: "p1", name: "Enzymax", price: 189000, rating: 4.6, tag: "Tiêu hóa", img: "https://placehold.co/120x120" },
+  { id: "p2", name: "PregnaVie", price: 259000, rating: 4.7, tag: "Dinh dưỡng", img: "https://placehold.co/120x120" },
+  { id: "p3", name: "UTImax", price: 299000, rating: 4.8, tag: "Sức khỏe Phụ nữ", img: "https://placehold.co/120x120" },
 ];
 
 // Screens
@@ -124,7 +124,7 @@ const HomeScreen = ({ openChat, openCatalog, openFeedback }) => (
         <Chip>3 lịch</Chip>
       </div>
       <div className="mt-2 space-y-2">
-        {["08:00 - Probiotic", "12:00 - Omega", "20:30 - Women+"].map((t,i)=>(
+        {["08:00 - Enzymax Kids", "12:00 - Omega", "20:30 - Dinh dưỡng"].map((t,i)=>(
           <div key={i} className="flex items-center gap-3">
             <Clock size={18} />
             <div className="flex-1">{t}</div>
@@ -217,7 +217,7 @@ const RemindersScreen = () => (
 
     <Card>
       <div className="font-semibold mb-2">Lịch đã tạo</div>
-      {[{t:"08:00", n:"Probiotic"},{t:"20:30", n:"Women+"}].map((r,i)=> (
+      {[{t:"08:00", n:"Enzymax Kids"},{t:"20:30", n:"Dinh dưỡng+"}].map((r,i)=> (
         <div key={i} className="flex items-center justify-between py-2 border-b last:border-b-0">
           <div className="flex items-center gap-3"><Clock size={18}/> {r.t} - {r.n}</div>
           <Button className="bg-white border">Sửa</Button>
@@ -250,7 +250,7 @@ const ProfileScreen = () => (
   <Screen title="Tài khoản">
     <Card>
       <div className="font-semibold mb-2">Lịch sử sử dụng & đánh giá</div>
-      {[{n:"Probiotic Digest+", d:"07/09 - 21/09"},{n:"Omega Balance", d:"01/08 - 31/08"}].map((h,i)=>(
+      {[{n:"Enzymax Kids", d:"07/09 - 21/09"},{n:"Enzymax Kids", d:"01/08 - 31/08"}].map((h,i)=>(
         <div key={i} className="flex items-center justify-between py-2 border-b last:border-b-0">
           <div>
             <div className="font-medium">{h.n}</div>
