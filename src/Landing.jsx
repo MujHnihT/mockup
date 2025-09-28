@@ -17,10 +17,16 @@ export default function Landing() {
             Trang Admin
           </button>
           <button
-            onClick={() => navigate("/user")}
+            onClick={() => navigate("/user-app")}
             className="px-6 py-3 rounded-2xl bg-gray-900 text-white shadow hover:bg-black transition"
           >
-            Trang User
+            Trang User app
+          </button>
+           <button
+            onClick={() => navigate("/user-web")}
+            className="px-6 py-3 rounded-2xl bg-gray-900 text-white shadow hover:bg-black transition"
+          >
+            Trang User Web
           </button>
         </div>
       </div>

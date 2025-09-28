@@ -6,6 +6,7 @@ import "./index.css";
 import Landing from "./Landing.jsx";
 import AdminApp from "./AdminApp.jsx";
 import UserApp from "./UserApp.jsx";
+import UserWeb from "./UserWeb.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -13,7 +14,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/admin" element={<AdminApp />} />
-        <Route path="/user" element={<UserApp />} />
+        <Route path="/user-app" element={<UserApp />} />
+        <Route path="/user-web" element={<UserWeb />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

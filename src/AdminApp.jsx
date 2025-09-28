@@ -335,23 +335,7 @@ const Feedback = () => {
 // SETTINGS
 const SettingsView = () => (
   <div className="p-4 space-y-4">
-    <Card className="p-4">
-      <div className="font-semibold mb-3 flex items-center gap-2"><Shield/> Security</div>
-      <div className="grid grid-cols-3 gap-3 text-sm">
-        <div className="space-y-1">
-          <div className="text-gray-500">Roles</div>
-          <Select><option>RBAC Default</option></Select>
-        </div>
-        <div className="space-y-1">
-          <div className="text-gray-500">2FA</div>
-          <Select><option>Optional</option><option>Required</option></Select>
-        </div>
-        <div className="space-y-1">
-          <div className="text-gray-500">Session Timeout</div>
-          <Select><option>30 mins</option><option>60 mins</option></Select>
-        </div>
-      </div>
-    </Card>
+  
 
     <Card className="p-4">
       <div className="font-semibold mb-3">Operational</div>
@@ -364,10 +348,7 @@ const SettingsView = () => (
           <div className="text-gray-500">SLA (Feedback)</div>
           <Input placeholder="24h first response" />
         </div>
-        <div className="space-y-1">
-          <div className="text-gray-500">Video Call Provider</div>
-          <Select><option>Later (Phase 1.5)</option></Select>
-        </div>
+    
       </div>
     </Card>
   </div>
