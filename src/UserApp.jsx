@@ -268,10 +268,11 @@ const RemindersScreen = () => (
       <div className="font-semibold mb-2">Tạo nhắc lịch</div>
       <div className="grid grid-cols-1 gap-2">
         <Input placeholder="Tên thuốc / sản phẩm" />
-        <div className="grid grid-cols-2 gap-2">
-          <Input type="time" defaultValue="08:00" className="w-full" />
-          <Input type="number" placeholder="Số lần/ngày" defaultValue={2} className="w-full" />
+        <div className="flex gap-2">
+          <Input type="time" defaultValue="08:00" className="flex-1" />
+          <Input type="number" placeholder="Số lần/ngày" defaultValue={2} className="flex-1" />
         </div>
+
 
         <Button className="bg-emerald-600 text-white flex items-center gap-2 justify-center"><CalendarClock size={18} /> Lưu nhắc lịch</Button>
       </div>
