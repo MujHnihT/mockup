@@ -75,9 +75,9 @@ const PRODUCTS = [
 // ];
 
 const NEARBY = [
-  { id: "nt1", name: "Nhà thuốc Minh Thủy 1", distance: 1.2, address: "12 P. Xã Đàn, Hà Nội"  },
-  { id: "nt2",name: "Nhà thuốc Nhị Trưng 1", distance: 2.5, address: "45 Nguyễn Trãi, TP.HCM"  },
-  { id: "nt3",  name: "Nhà thuốc Phước Thiện 1", distance: 3.1, address: "89 Lê Lợi, Đà Nẵng"  },
+  { id: "nt1", name: "Nhà thuốc Minh Thủy 1", distance: 1.2, address: "12 P. Xã Đàn, Hà Nội" },
+  { id: "nt2", name: "Nhà thuốc Nhị Trưng 1", distance: 2.5, address: "45 Nguyễn Trãi, TP.HCM" },
+  { id: "nt3", name: "Nhà thuốc Phước Thiện 1", distance: 3.1, address: "89 Lê Lợi, Đà Nẵng" },
   { id: "nt4", name: "Nhà thuốc Nhân Hòa 1", distance: 2.4, address: "5 Cầu Giấy, Đà Lạt" },
 ];
 
@@ -90,8 +90,8 @@ const Onboarding = ({ onContinue }) => {
       <Card>
         <div className="text-sm text-gray-600 mb-2">Cá nhân hoá danh mục theo mục tiêu của bạn</div>
         <div className="grid grid-cols-3 gap-2">
-          {[{k:"Tiêu hóa", Icon: HeartPulse},{k:"Dinh dưỡng", Icon: Pill},{k:"Sức khỏe Phụ nữ", Icon: User}].map(({k, Icon}) => (
-            <button key={k} onClick={() => setGoal(k)} className={`p-3 rounded-2xl border flex flex-col items-center gap-2 ${goal===k?"border-emerald-500 bg-emerald-50":""}`}>
+          {[{ k: "Tiêu hóa", Icon: HeartPulse }, { k: "Dinh dưỡng", Icon: Pill }, { k: "Sức khỏe Phụ nữ", Icon: User }].map(({ k, Icon }) => (
+            <button key={k} onClick={() => setGoal(k)} className={`p-3 rounded-2xl border flex flex-col items-center gap-2 ${goal === k ? "border-emerald-500 bg-emerald-50" : ""}`}>
               <Icon />
               <span className="text-sm text-center">{k}</span>
             </button>
@@ -103,7 +103,7 @@ const Onboarding = ({ onContinue }) => {
         <div className="font-semibold">Hoặc nhập nhu cầu của bạn</div>
         <div className="mt-2 flex gap-2">
           <Input placeholder="Ví dụ: đau dạ dày, bổ sung sắt" />
-          <Button className="bg-gray-900 text-white" aria-label="Search"><Search size={18}/></Button>
+          <Button className="bg-gray-900 text-white" aria-label="Search"><Search size={18} /></Button>
         </div>
       </Card>
     </Screen>
@@ -120,7 +120,7 @@ const HomeScreen = ({ openChat, openCatalog, openFeedback, openNearby }) => (
           <div className="text-gray-600 text-sm">Bạn cần tư vấn hôm nay?</div>
         </div>
         <div className="ml-auto">
-          <Button onClick={openChat} className="bg-emerald-600 text-white flex items-center gap-2"><MessageSquare size={18}/> Chat</Button>
+          <Button onClick={openChat} className="bg-emerald-600 text-white flex items-center gap-2"><MessageSquare size={18} /> Chat</Button>
         </div>
       </div>
     </Card>
@@ -142,7 +142,7 @@ const HomeScreen = ({ openChat, openCatalog, openFeedback, openNearby }) => (
         <Chip>3 lịch</Chip>
       </div>
       <div className="mt-2 space-y-2">
-        {["08:00 - Enzymax Kids", "12:00 - Enzymax Duo Biotics", "20:30 - Enzymax Forte"].map((t,i)=>(
+        {["08:00 - Enzymax Kids", "12:00 - Enzymax Duo Biotics", "20:30 - Enzymax Forte"].map((t, i) => (
           <div key={i} className="flex items-center gap-3">
             <Clock size={18} />
             <div className="flex-1">{t}</div>
@@ -160,22 +160,22 @@ const CatalogScreen = ({ openDetail }) => {
   return (
     <Screen title="Danh mục">
       <div className="flex gap-2">
-        <Input placeholder="Tìm sản phẩm" value={q} onChange={e=>setQ(e.target.value)} />
-        <Button className="bg-gray-900 text-white" aria-label="Search"><Search size={18}/></Button>
+        <Input placeholder="Tìm sản phẩm" value={q} onChange={e => setQ(e.target.value)} />
+        <Button className="bg-gray-900 text-white" aria-label="Search"><Search size={18} /></Button>
       </div>
       <div className="grid grid-cols-1 gap-3">
-        {filtered.map(p=> (
-          <Card key={p.id} className="flex gap-3 items-center hover:shadow-md cursor-pointer" onClick={()=>openDetail(p)}>
-            <img src={p.img} alt="" className="w-20 h-20 rounded-xl object-cover"/>
+        {filtered.map(p => (
+          <Card key={p.id} className="flex gap-3 items-center hover:shadow-md cursor-pointer" onClick={() => openDetail(p)}>
+            <img src={p.img} alt="" className="w-20 h-20 rounded-xl object-cover" />
             <div className="flex-1">
               <div className="font-semibold">{p.name}</div>
               <div className="text-sm text-gray-600">{p.tag}</div>
-              <div className="flex items-center gap-1 text-amber-500 text-sm"><Star size={16}/> {p.rating}</div>
-              <div className="mt-1 flex items-center gap-2 text-xs text-emerald-700"><MapPin size={14}/> {p.nearest.name} • {p.nearest.distance} km</div>
+              <div className="flex items-center gap-1 text-amber-500 text-sm"><Star size={16} /> {p.rating}</div>
+              <div className="mt-1 flex items-center gap-2 text-xs text-emerald-700"><MapPin size={14} /> {p.nearest.name} • {p.nearest.distance} km</div>
             </div>
             <div className="text-right">
               <div className="font-semibold text-emerald-700">{p.price.toLocaleString()}₫</div>
-              <Button className="mt-2 bg-white border text-xs flex items-center gap-1"><Navigation size={14}/> Đường đi</Button>
+              <Button className="mt-2 bg-white border text-xs flex items-center gap-1"><Navigation size={14} /> Đường đi</Button>
             </div>
           </Card>
         ))}
@@ -187,10 +187,10 @@ const CatalogScreen = ({ openDetail }) => {
 const ProductDetail = ({ product, onBack, openNearby }) => (
   <Screen title={product?.name || "Chi tiết"} onBack={onBack}>
     <Card>
-      <img src={product.img} alt="" className="w-full h-40 object-cover rounded-xl"/>
+      <img src={product.img} alt="" className="w-full h-40 object-cover rounded-xl" />
       <div className="mt-3 flex items-center gap-2">
         <Chip>{product.tag}</Chip>
-        <div className="flex items-center gap-1 text-amber-500 text-sm"><Star size={16}/> {product.rating}</div>
+        <div className="flex items-center gap-1 text-amber-500 text-sm"><Star size={16} /> {product.rating}</div>
       </div>
       <div className="mt-2 text-emerald-700 font-semibold text-xl">{product.price.toLocaleString()}₫</div>
       <div className="mt-3 text-sm text-gray-700 leading-relaxed">
@@ -203,7 +203,7 @@ const ProductDetail = ({ product, onBack, openNearby }) => (
         </div>
         <div className="text-xs text-gray-600 ml-7">{product.nearest.address}</div>
         <div className="mt-2 grid grid-cols-2 gap-2">
-          <Button className="bg-white border flex items-center justify-center gap-1"><Navigation size={16}/> Chỉ đường</Button>
+          <Button className="bg-white border flex items-center justify-center gap-1"><Navigation size={16} /> Chỉ đường</Button>
           <Button className="bg-white border" onClick={openNearby}>Xem nhà thuốc khác</Button>
         </div>
       </div>
@@ -219,16 +219,16 @@ const NearbyPharmacies = ({ onBack }) => (
     <Card>
       <div className="text-sm text-gray-600 mb-2">Danh sách sắp xếp theo khoảng cách</div>
       <div className="space-y-2">
-        {NEARBY.map((p)=> (
+        {NEARBY.map((p) => (
           <div key={p.id} className="p-3 rounded-xl border flex items-start gap-3">
-            <div className="p-2 rounded-xl bg-emerald-50"><MapPin className="text-emerald-700"/></div>
+            <div className="p-2 rounded-xl bg-emerald-50"><MapPin className="text-emerald-700" /></div>
             <div className="flex-1">
               <div className="font-semibold">{p.name}</div>
               <div className="text-xs text-gray-600">{p.address}</div>
               <div className="text-xs text-emerald-700 mt-1">{p.distance} km</div>
             </div>
             <div className="grid gap-2">
-              <Button className="bg-white border text-xs flex items-center gap-1"><Navigation size={14}/> Chỉ đường</Button>
+              <Button className="bg-white border text-xs flex items-center gap-1"><Navigation size={14} /> Chỉ đường</Button>
               <Button className="bg-emerald-600 text-white text-xs">Gọi đặt mua</Button>
             </div>
           </div>
@@ -253,10 +253,10 @@ const ChatScreen = ({ onBack }) => (
       </div>
       <div className="mt-3 flex gap-2">
         <Input placeholder="Nhập tin nhắn" />
-        <Button className="bg-emerald-600 text-white" aria-label="Send"><Send size={18}/></Button>
+        <Button className="bg-emerald-600 text-white" aria-label="Send"><Send size={18} /></Button>
       </div>
       <div className="mt-4">
-        <Button className="bg-white border flex items-center gap-2 w-full justify-center"><Phone size={18}/> Đặt lịch videocall</Button>
+        <Button className="bg-white border flex items-center gap-2 w-full justify-center"><Phone size={18} /> Đặt lịch videocall</Button>
       </div>
     </Card>
   </Screen>
@@ -269,18 +269,19 @@ const RemindersScreen = () => (
       <div className="grid grid-cols-1 gap-2">
         <Input placeholder="Tên thuốc / sản phẩm" />
         <div className="grid grid-cols-2 gap-2">
-          <Input type="time" defaultValue="08:00" />
-          <Input type="number" placeholder="Số lần/ngày" defaultValue={2} />
+          <Input type="time" defaultValue="08:00" className="w-full" />
+          <Input type="number" placeholder="Số lần/ngày" defaultValue={2} className="w-full" />
         </div>
-        <Button className="bg-emerald-600 text-white flex items-center gap-2 justify-center"><CalendarClock size={18}/> Lưu nhắc lịch</Button>
+
+        <Button className="bg-emerald-600 text-white flex items-center gap-2 justify-center"><CalendarClock size={18} /> Lưu nhắc lịch</Button>
       </div>
     </Card>
 
     <Card>
       <div className="font-semibold mb-2">Lịch đã tạo</div>
-      {[{t:"08:00", n:"Enzymax Kids"},{t:"20:30", n:"Enzymax Kids"}].map((r,i)=>(
+      {[{ t: "08:00", n: "Enzymax Kids" }, { t: "20:30", n: "Enzymax Kids" }].map((r, i) => (
         <div key={i} className="flex items-center justify-between py-2 border-b last:border-b-0">
-          <div className="flex items-center gap-3"><Clock size={18}/> {r.t} - {r.n}</div>
+          <div className="flex items-center gap-3"><Clock size={18} /> {r.t} - {r.n}</div>
           <Button className="bg-white border">Sửa</Button>
         </div>
       ))}
@@ -311,7 +312,7 @@ const ProfileScreen = () => (
   <Screen title="Tài khoản">
     <Card>
       <div className="font-semibold mb-2">Lịch sử sử dụng & đánh giá</div>
-      {[{n:"Enzymax Kids", d:"07/09 - 21/09"},{n:"PregnaVie", d:"01/08 - 31/08"}].map((h,i)=>(
+      {[{ n: "Enzymax Kids", d: "07/09 - 21/09" }, { n: "PregnaVie", d: "01/08 - 31/08" }].map((h, i) => (
         <div key={i} className="flex items-center justify-between py-2 border-b last:border-b-0">
           <div>
             <div className="font-medium">{h.n}</div>
@@ -349,13 +350,13 @@ export default function App() {
             openCatalog={() => { setTab("catalog"); setPage("tabs"); }}
             openFeedback={() => setPage("feedback")}
             openNearby={() => setPage("nearby")} />
-          <BottomNav tab={"home"} setTab={(k)=> { setTab(k); setPage("tabs"); }} />
+          <BottomNav tab={"home"} setTab={(k) => { setTab(k); setPage("tabs"); }} />
         </>
       )}
       {page === "tabs" && (
         <>
           {tab === "home" && <HomeScreen openChat={() => setPage("chat")} openCatalog={() => { setTab("catalog"); }} openFeedback={() => setPage("feedback")} openNearby={() => setPage("nearby")} />}
-          {tab === "catalog" && <CatalogScreen openDetail={(p)=> { setDetail(p); setPage("detail"); }} />}
+          {tab === "catalog" && <CatalogScreen openDetail={(p) => { setDetail(p); setPage("detail"); }} />}
           {tab === "reminders" && <RemindersScreen />}
           {tab === "profile" && <ProfileScreen />}
           <BottomNav tab={tab} setTab={setTab} />
