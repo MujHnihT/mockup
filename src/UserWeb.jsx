@@ -51,7 +51,7 @@ const Sidebar = ({ section, setSection }) => (
     <div className="mt-6">
       <div className="text-xs text-gray-500 mb-2">Mục tiêu sức khỏe</div>
       <div className="grid grid-cols-2 gap-2">
-        {["Tiêu hóa","Dinh dưỡng","Phụ nữ","Giấc ngủ"].map(g => (
+        {["Tiêu hóa","Dinh dưỡng","Phụ nữ"].map(g => (
           <Button key={g} className="bg-white border">{g}</Button>
         ))}
       </div>

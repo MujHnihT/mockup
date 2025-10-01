@@ -278,7 +278,7 @@ const RemindersScreen = () => (
 
     <Card>
       <div className="font-semibold mb-2">Lịch đã tạo</div>
-      {[{t:"08:00", n:"Enzymax Kids"},{t:"20:30", n:"Dinh dưỡng+"}].map((r,i)=>(
+      {[{t:"08:00", n:"Enzymax Kids"},{t:"20:30", n:"Enzymax Kids"}].map((r,i)=>(
         <div key={i} className="flex items-center justify-between py-2 border-b last:border-b-0">
           <div className="flex items-center gap-3"><Clock size={18}/> {r.t} - {r.n}</div>
           <Button className="bg-white border">Sửa</Button>
@@ -311,7 +311,7 @@ const ProfileScreen = () => (
   <Screen title="Tài khoản">
     <Card>
       <div className="font-semibold mb-2">Lịch sử sử dụng & đánh giá</div>
-      {[{n:"Probiotic Digest+", d:"07/09 - 21/09"},{n:"Omega Balance", d:"01/08 - 31/08"}].map((h,i)=>(
+      {[{n:"Enzymax Kids", d:"07/09 - 21/09"},{n:"PregnaVie", d:"01/08 - 31/08"}].map((h,i)=>(
         <div key={i} className="flex items-center justify-between py-2 border-b last:border-b-0">
           <div>
             <div className="font-medium">{h.n}</div>
